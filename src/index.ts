@@ -252,7 +252,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   if (request.params.name === "query") {
     let sql = request.params.arguments?.sql as string;
-    let maximumBytesBilled = request.params.arguments?.maximumBytesBilled || "1000000000";
+    let maximumBytesBilled = request.params.arguments?.maximumBytesBilled || "100000000000";
     
     // Validate read-only query
     const forbiddenPattern = /\b(INSERT|UPDATE|DELETE|CREATE|DROP|ALTER|MERGE|TRUNCATE|GRANT|REVOKE|EXECUTE|BEGIN|COMMIT|ROLLBACK)\b/i;
